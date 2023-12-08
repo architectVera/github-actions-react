@@ -42,6 +42,10 @@ jobs:
         steps:
             - name: Get repository code
               uses: actions/checkout@v4
+            - name: Install Node JS
+              uses: actions/setup-node@v4
+              with:
+                node-version: ${{ matrix.node-version }}
             - name: Install dependencies
               run:  npm ci
             - name: Cache deps
